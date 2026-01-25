@@ -1,0 +1,119 @@
+/* todos titulos principales*/
+h1{
+    color: rgb(2, 77, 77);
+    font-family:"Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+    text-align: center;
+    font-size: 50px;
+  
+}
+/* encabezado de todas las paginas*/
+header{
+     background-color: rgb(116, 201, 230); 
+    color: white; 
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+
+}
+/* botones de inicio de seccion y volver*/
+button{
+    background-color: rgb(9, 37, 105); 
+    color: white; 
+    padding: 10px;
+    margin-left: 1200px;   
+
+}
+/* imagen pagina principal*/
+img{
+    align-items: center;
+    margin: 30px;
+
+}
+/* barra horizontal*/
+hr{
+   height: 2px;
+    background-color: #061251;
+    margin: 40px auto;
+    width: 80%;
+
+}
+/* lo q contiene el cuerpo*/
+body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient( #2e8fa8);
+            color: #000000;
+}
+/* estilo titulos h2*/
+h2{
+    color: #061251;
+    text-align: center;
+
+}
+/* recuadro q contiene el nombre del usuario y contraseña*/
+form{
+    
+    text-align: center;
+   background-color: rgba(21, 137, 183, 0.831); 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 10px 10px 10px rgba(74, 166, 169, 0.842); 
+  width: 25%;       
+    margin: 20px auto;
+}
+/* hipervinculos*/
+a{
+    text-align: center;
+  align-items: center; 
+  margin-left: 75px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgba(11, 11, 156, 0.906);
+}
+/* hipervinculo del boton de ingresar en el formulario */
+.lolo {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(14, 14, 141);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; 
+}
+/* estilo de los textos de parrafos*/
+p{
+    margin: 35px;
+    text-align: center;
+
+}
+/* estilos de los titulos h4*/
+h4{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+
+}
+/*pie de pagina*/
+footer{
+    background-color:rgb(205, 198, 198);
+    padding: 20px;
+    color:rgb(30, 115, 184);
+
+}
+
+/* imagenes de las categorias de libros queden alineadas en el centro*/
+.galeria{
+    display: flex;     
+    gap: 20px;  
+    align-items: center;
+
+}
+/* texto debajo de las imagenes de categorias queden centradas*/
+.item{
+    text-align: center; 
+    font-family:monospace;
+    font-size: 20px;
+
+}
+/* todas las imagenes queden centradas en el medio*/
+.imag{
+    align-items: center;
+    margin-left: 50px;
+}
