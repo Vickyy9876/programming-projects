@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del postulante</title>
+    <link rel="stylesheet" href="datosform.css">
+</head>
+<body>
+  
+    <header>
+    <h3>FIESTA DEL CHORIZO</h3>
+     <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtI5XSMc6F3E38LWzZMlXI0srwV5boxsLBfA&s" alt="Logo"></header>
+
+    <div class="parent">
+  <div class="div1">
+      <h1>Datos del formulario</h1>
+  </div>
+  <div class="div2">
+    
+      
+      <div class="container">
+        <h2>Datos del formulario de postulantes</h2>
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Apellido:</strong> <span id="Apellido"></span></p>
+        <p><strong>Edad:</strong> <span id="edad"></span></p>
+         <p><strong>Número de teléfono:</strong> <span id="telefono"></span></p>
+        <p><strong>Presentación:</strong> <span id="comentario"></span></p>
+    </div>
+    <script>
+          const urlParams = new URLSearchParams(window.location.search);
+      const nombre = urlParams.get('nombre');
+      const apellido = urlParams.get('apellido');
+      const edad = urlParams.get('edad');
+      const comentario = urlParams.get('comentario');
+       const telefono = urlParams.get('telefono');
+
+      document.getElementById('nombre').textContent = nombre;
+      document.getElementById('Apellido').textContent = apellido;
+      document.getElementById('edad').textContent = edad;
+      document.getElementById('comentario').textContent = comentario;
+       document.getElementById('telefono').textContent = telefono;
+    </script>
+  </div>
+
+
+  
+</body>
+</html>

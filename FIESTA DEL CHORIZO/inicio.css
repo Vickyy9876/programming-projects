@@ -1,0 +1,78 @@
+  body{
+            background-image:url("ataliva.jpeg");
+            background-size: cover;     
+            background-position: center;  }
+        h3{
+         color: #800000;
+      font-size: 25px;
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      margin: 160px;
+        }
+button{
+    background-color: rgba(112, 60, 60, 0.804);
+    color: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin:5px;
+    align-items:center;
+    text-align: center;
+}
+hr{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 1px;
+}
+ header {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      background-color: rgba(255, 255, 255, 0.884);
+      align-items: center;
+      display:flex;
+    }
+
+.logo {
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+.botones {
+     position: absolute;
+  top: 10px;
+  right: 20px;
+}
+h1{
+    color: rgb(168, 16, 16);
+    font-size:50px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+     background-color: rgba(128, 128, 128, 0.8);
+    color: white;
+    padding: 5px;
+    width: 1498px;
+}
+
+h5{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size:15px;
+}
+
+.botonmas{
+    background-color: rgba(112, 60, 60, 0.804);
+    color: white;
+    border-radius: 12px;
+    padding: 13px;
+   
+    margin-left:690px;
+    align-items:center;
+    text-align: center;
+}
+
