@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consecionaria Tralalero Tralala </title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#38bdf8;
+    text-shadow:0 0 15px rgba(56,189,248,.5);
+}
+
+h2{
+    margin-bottom:30px;
+    color:#cbd5e1;
+    font-weight:400;
+}
+
+button{
+    background:linear-gradient(45deg,#0ea5e9,#2563eb);
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(14,165,233,.4);
+    margin-bottom:30px;
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 0 30px rgba(14,165,233,.7);
+}
+
+table{
+    width:90%;
+    max-width:900px;
+    margin:0 auto;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+th{
+    background:linear-gradient(45deg,#0284c7,#2563eb);
+    color:white;
+    padding:18px;
+    font-size:1.1rem;
+    letter-spacing:1px;
+}
+
+td{
+    padding:16px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+tr:hover{
+    background:rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+td:first-child{
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+#precio_final{
+    color:#22c55e;
+    font-weight:bold;
+    font-size:1.2rem;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.1rem;
+    }
+
+    table{
+        width:100%;
+    }
+
+    td,
+    th{
+        padding:12px;
+        font-size:.9rem;
+    }
+
+    button{
+        width:100%;
+        max-width:300px;
+    }
+}
+</style>
+</head>
+<body>
+     <h1>¡Bienvenidos!</h1>
+        <h2>Consecionaria Tralalero Tralala</h2>
+
+        <button onclick="ingresar_datos()">Ingresar datos</button>
+
+        <table>
+            <tr>
+                <th>Dato</th>
+                <th>Información ingresada</th>
+            </tr>
+
+            <tr>
+                <td>Dueño</td>
+                <td id="duenio"></td>
+            </tr>
+            <tr>
+                <td>Modelo</td>
+                <td id="modelo"></td>
+            </tr>
+            <tr>
+                <td>Año</td>
+                <td id="anio"></td>
+            </tr>
+
+            <tr>
+                <td>Patente</td>
+                <td id="patente"></td>
+            </tr>
+
+            <tr>
+                <td>Kilometraje</td>
+                <td id="kilometraje"></td>
+            </tr>
+
+            <tr>
+                <td>Color</td>
+                <td id="color"></td>
+            </tr>
+
+            <tr>
+                <td>Precio del auto</td>
+                <td id="precio"></td>
+            </tr>
+        
+             <tr>
+                <td>Precio final del auto</td>
+                <td id="precio_final"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function ingresar_datos(){
+
+            let duenio = prompt("Ingrese el nombre completo del dueño del auto: ");
+            let modelo = prompt("Ingrese el modelo del auto: ");
+            let anio = prompt("Ingrese el año del auto: ");
+            anio = Number(anio);
+            let patente = prompt("Ingrese la patente del auto: ");
+            let kilometraje = prompt("Ingrese el kilometraje del auto: ");
+            let color = prompt("Ingrese el color del auto: ");
+            let precio = prompt("Ingrese el precio de compra del auto: ");
+            precio = Number(precio);
+
+            precio_final=precio*1.38;
+
+            document.getElementById("duenio").innerHTML = duenio;
+            document.getElementById("modelo").innerHTML = modelo;
+            document.getElementById("anio").innerHTML = anio;
+            document.getElementById("patente").innerHTML = patente;
+            document.getElementById("kilometraje").innerHTML = kilometraje;
+            document.getElementById("color").innerHTML = color;
+            document.getElementById("precio").innerHTML = precio;
+            document.getElementById("precio_final").innerHTML = precio_final;
+
+        }
+    </script>
+    
+</body>
+</html>

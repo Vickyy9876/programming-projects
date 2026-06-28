@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Página</title>
+
+  <style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        background:
+        radial-gradient(circle at top left, #2563eb 0%, transparent 30%),
+        radial-gradient(circle at bottom right, #06b6d4 0%, transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a, #111827);
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* EFECTO FONDO */
+    body::before{
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: rgba(59,130,246,0.18);
+        border-radius: 50%;
+        filter: blur(120px);
+        top: -200px;
+        left: -150px;
+    }
+
+    body::after{
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: rgba(6,182,212,0.15);
+        border-radius: 50%;
+        filter: blur(120px);
+        bottom: -180px;
+        right: -120px;
+    }
+
+    .contenedor{
+        width: 90%;
+        max-width: 950px;
+        padding: 45px;
+        border-radius: 30px;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow:
+        0 10px 40px rgba(0,0,0,0.45),
+        inset 0 0 20px rgba(255,255,255,0.03);
+
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        animation: aparecer 1s ease;
+    }
+
+    @keyframes aparecer{
+        from{
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1{
+        font-size: 52px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 25px rgba(59,130,246,0.5);
+    }
+
+    h2{
+        color: #cbd5e1;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 35px;
+    }
+
+    button{
+        padding: 15px 34px;
+        border: none;
+        border-radius: 16px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+
+        box-shadow:
+        0 5px 20px rgba(37,99,235,0.5),
+        inset 0 0 10px rgba(255,255,255,0.15);
+
+        transition: 0.35s;
+        margin-bottom: 35px;
+    }
+
+    button:hover{
+        transform: translateY(-5px) scale(1.05);
+        box-shadow:
+        0 10px 30px rgba(6,182,212,0.55),
+        0 0 25px rgba(59,130,246,0.4);
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: blur(10px);
+    }
+
+    th{
+        background: rgba(255,255,255,0.12);
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 18px;
+        letter-spacing: 1px;
+    }
+
+    td{
+        padding: 18px;
+        color: #e2e8f0;
+        font-size: 15px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        transition: 0.25s;
+    }
+
+    tr:hover td{
+        background: rgba(255,255,255,0.08);
+        color: white;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h1>¡Bienvenidos!</h1>
+        <h2>Esta es mi primera página web creada con HTML y CSS</h2>
+
+        <button onclick="ingresar_datos()">Ingresar datos</button>
+
+        <table>
+            <tr>
+                <th>Dato</th>
+                <th>Información ingresada</th>
+            </tr>
+
+            <tr>
+                <td>Nombre</td>
+                <td id="nombre"></td>
+            </tr>
+
+            <tr>
+                <td>Edad</td>
+                <td id="edad"></td>
+            </tr>
+
+            <tr>
+                <td>Curso</td>
+                <td id="curso"></td>
+            </tr>
+
+            <tr>
+                <td>Ciudad</td>
+                <td id="ciudad"></td>
+            </tr>
+
+            <tr>
+                <td>Color favorito</td>
+                <td id="color_fav"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function ingresar_datos(){
+
+            let nombre = prompt("Ingrese el nombre");
+            let edad = prompt("Ingrese la edad");
+            let curso = prompt("Ingrese el curso");
+            let ciudad = prompt("Ingrese la ciudad");
+            let color_fav = prompt("Ingrese el color favorito");
+
+            document.getElementById("nombre").innerHTML = nombre;
+            document.getElementById("edad").innerHTML = edad;
+            document.getElementById("curso").innerHTML = curso;
+            document.getElementById("ciudad").innerHTML = ciudad;
+            document.getElementById("color_fav").innerHTML = color_fav;
+        }
+    </script>
+
+</body>
+</html>

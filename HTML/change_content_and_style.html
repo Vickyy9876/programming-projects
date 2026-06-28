@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cambiar contenido y estilo</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="titulo">Bienvenidos</h1>
+
+    <button onclick="cambiarTitulo()">Cambiar título</button>
+
+    <script>
+        function cambiarTitulo() {
+            // Pedimos un dato al usuario
+            let nombre = prompt("Ingrese su nombre:");
+
+            // Cambiamos el contenido de la etiqueta h1
+            document.getElementById("titulo").innerHTML = "Bienvenido, " + nombre;
+
+            // Cambiamos el estilo de la misma etiqueta h1
+            document.getElementById("titulo").style.color = "red";
+            document.getElementById("titulo").style.backgroundColor = "orange";
+            document.getElementById("titulo").style.fontSize = "50px";
+            document.getElementById("titulo").style.border = "2px solid black";
+            document.getElementById("titulo").style.padding = "20px";
+        }
+    </script>
+
+</body>
+</html>

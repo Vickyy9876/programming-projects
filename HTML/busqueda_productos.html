@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de producto</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(-45deg,#ff0080,#7928ca,#007cf0,#00dfd8);
+    background-size:400% 400%;
+    animation:fondo 12s ease infinite;
+    position:relative;
+}
+
+@keyframes fondo{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#ff00cc;
+    border-radius:50%;
+    filter:blur(150px);
+    top:-100px;
+    left:-100px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#00e5ff;
+    border-radius:50%;
+    filter:blur(150px);
+    bottom:-100px;
+    right:-100px;
+    z-index:-1;
+}
+
+/* CONTENEDOR DEL BUSCADOR */
+
+.container{
+    width:90%;
+    max-width:650px;
+    padding:50px;
+    text-align:center;
+    border-radius:30px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.1),
+        0 0 50px rgba(0,0,0,0.2);
+    margin-bottom:40px;
+    animation:entrada 1s ease;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:white;
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:15px;
+    text-shadow:
+        0 0 10px white,
+        0 0 20px #00e5ff;
+}
+
+p{
+    color:rgba(255,255,255,0.9);
+    font-size:1.1rem;
+    margin-bottom:25px;
+}
+
+/* INPUT */
+
+input{
+    width:100%;
+    max-width:400px;
+    padding:18px 25px;
+    margin:20px 0;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    font-size:1rem;
+    color:white;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    transition:.3s;
+    text-align:center;
+    box-shadow:0 0 10px rgba(255,255,255,0.1);
+}
+
+input::placeholder{
+    color:rgba(255,255,255,0.6);
+}
+
+input:focus{
+    border:1px solid #00e5ff;
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 30px rgba(0,229,255,.5);
+    transform:scale(1.03);
+}
+
+/* BOTÓN */
+
+button{
+    border:none;
+    padding:18px 40px;
+    font-size:1.2rem;
+    font-weight:600;
+    border-radius:50px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(90deg,#ff00cc,#3333ff);
+    transition:.3s;
+    box-shadow:
+        0 0 15px #ff00cc,
+        0 0 30px #3333ff;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:
+        0 0 30px #ff00cc,
+        0 0 60px #3333ff;
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+/* RESULTADO */
+
+#resultado{
+    margin-top:35px;
+    padding:20px;
+    border-radius:20px;
+    color:white;
+    font-weight:500;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* TABLA */
+
+table{
+    width:90%;
+    max-width:1000px;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    margin-bottom:40px;
+}
+
+th{
+    background:linear-gradient(45deg,#0284c7,#2563eb);
+    color:white;
+    padding:18px;
+    font-size:1.1rem;
+    letter-spacing:1px;
+}
+
+td{
+    padding:16px;
+    text-align:center;
+    color:white;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+tr:hover{
+    background:rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+td:first-child{
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+    .container{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    table{
+        width:100%;
+        font-size:.9rem;
+    }
+
+    th,
+    td{
+        padding:12px 8px;
+    }
+}
+</style>
+ 
+</head>
+<body>
+    <div class="container">
+        <h1>Buscar</h1>
+        <p>Presiona el boton e ingresa el nombre de un producto  </p>
+        <input type="text" id="producto" name="producto" placeholder="Ingrese el nombre del producto">
+        <button onclick="buscar_producto()">Buscar</button>
+        <h2 id="resultado"> El resultado aparecerá aquí</h2>
+        
+    </div>
+    <table>
+            <tr>
+                <th>Producto disponibles</th>
+            </tr>
+
+            <tr>
+                <td>lapiz</td>
+                <td id=""></td>
+            </tr>
+            <tr>
+                <td>cuaderno</td>
+                <td id=""></td>
+            </tr>
+            <tr>
+                <td>mochila</td>
+                <td id=""></td>
+            </tr>
+
+            <tr>
+                <td>cartuchera</td>
+                <td id=""></td>
+            </tr>
+
+            <tr>
+                <td>regla</td>
+                <td id=""></td>
+            </tr>
+
+           
+        </table>
+
+    <script>
+        function buscar_producto() {
+
+            let productos = {
+                "lapiz": [35, 500],
+                "cuaderno": [15, 1500],
+                "mochila": [26, 5000],
+                "cartuchera": [10, 3000],
+                "regla": [24, 2000]
+            };
+
+            let producto = document.getElementById("producto").value.toLowerCase();
+            let resultado = document.getElementById("resultado");
+
+            if (producto in productos) {
+                let stock = productos[producto][0];
+                let precio = productos[producto][1];
+
+                resultado.innerHTML =
+                    "Producto: " + producto +
+                    "<br>Stock: " + stock +
+                    "<br>Precio: $" + precio;
+            } else {
+                resultado.innerHTML = "Producto no encontrado";
+            }
+        }
+</script>
+</body>
+</html>
