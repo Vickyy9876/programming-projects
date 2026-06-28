@@ -1,3 +1,4 @@
+# Programming Projects Portfolio
 A collection of Python programs exploring algorithms, data structures, numerical systems, and practical problem-solving.# Programming Projects Portfolio
 
 This repository contains a collection of programming projects and exercises developed during high school and personal learning.
